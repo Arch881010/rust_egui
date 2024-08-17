@@ -31,13 +31,13 @@ fn main() {
     eframe::WebLogger::init(log::LevelFilter::Debug).ok();
 
     let web_options = eframe::WebOptions::default();
-    
+
     wasm_bindgen_futures::spawn_local(async {
         let start_result = eframe::WebRunner::new()
             .start(
                 "the_canvas_id",
                 web_options,
-                Box::new(|cc| Ok(Box::new(rust_egui::TemplateApp::new(cc)))),
+                Box::new(|cc| Ok(Box::new(eframe_template::TemplateApp::new(cc)))),
             )
             .await;
 

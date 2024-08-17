@@ -165,7 +165,7 @@ jobs:
       name: Upload binaries to release
       if: ${{ github.event_name == 'push' }}
       with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        repo_token: ${{ secrets.api_token }}
         file: eframe_template-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
         asset_name: eframe_template-${{ matrix.TARGET }}${{ matrix.EXTENSION }}
         tag: ${{ github.ref }}
